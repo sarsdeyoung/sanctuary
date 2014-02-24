@@ -44,6 +44,8 @@ and Blueprint http://www.blueprintcss.org/
 12.0 - Media
 --------------------------------------------------------------*/
 
+
+
 /*--------------------------------------------------------------
 1.0 - Reset
 --------------------------------------------------------------*/
@@ -131,7 +133,7 @@ input,
 select,
 textarea {
 	color: #404040;
-	font-family: sans-serif;
+	font-family: 'Open Sans';
 	font-size: 16px;
 	font-size: 1.6rem;
 	line-height: 1.5;
@@ -200,6 +202,7 @@ big {
 /*--------------------------------------------------------------
 3.0 Elements
 --------------------------------------------------------------*/
+
 hr {
 	background-color: #ccc;
 	border: 0;
@@ -338,24 +341,32 @@ textarea {
 /*--------------------------------------------------------------
 5.0 Navigation
 --------------------------------------------------------------*/
+
+
 /*--------------------------------------------------------------
 5.1 Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: rgba(255,255,255,1);
 }
 a:visited {
-	color: purple;
+	color:#b0b351;
 }
 a:hover,
 a:focus,
 a:active {
-	color: midnightblue;
+	color:#b0b351;
 }
 
 /*--------------------------------------------------------------
 5.2 Menus
 --------------------------------------------------------------*/
+#site-navigation {
+	background: rgba(0,0,0,0.64);
+	height: 86px;
+	margin-top: -50px;
+}
+
 .main-navigation {
 	clear: both;
 	display: block;
@@ -370,6 +381,11 @@ a:active {
 .main-navigation li {
 	float: left;
 	position: relative;
+	font-family:'Arvo';
+	font-weight:400;
+	font-size:.8em;
+	text-transform:uppercase;
+	margin-right: 22px;
 }
 .main-navigation a {
 	display: block;
@@ -439,6 +455,34 @@ a:active {
 	text-align: right;
 	width: 50%;
 }
+
+#menu-main-nav {
+	position: relative;
+	top: 35px;
+	left: 455px;
+}
+
+.sub-menu {
+	background-color:#EBEBEB;
+	text-align: center;
+	margin-right:0;
+}
+
+.sub-menu li {	
+	border-bottom:1px solid #CCC;
+	height:35px;
+	padding-top:8px;
+}
+
+.sub-menu li a {
+	font-size:1.2em;
+	color:black;
+}
+
+.sub-menu li a:hover {
+	background-color:#999;
+}
+
 
 /*--------------------------------------------------------------
 6.0 Accessibility
@@ -534,9 +578,96 @@ a:active {
 	display: none;
 }
 
+
 /*--------------------------------------------------------------
 10.0 Content
 --------------------------------------------------------------*/
+#main.site-main {
+	height:auto;	
+}
+
+#masthead.site-header {
+	height:0px;
+	z-index:1;
+}
+
+.site-header img {
+	position:relative;
+	top:20px;
+	left:20px;
+}
+
+.site {
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#background-sections {
+	position: relative;
+	top: -210px;
+	z-index: -1;
+}
+
+#secondary {
+	display:none;	
+}
+
+#heading-group {
+	position:relative;
+	bottom:300px;
+	left:500px;	
+}
+
+#home-heading {
+	font-family: Arvo;
+	font-size: 1.5em;
+	color:white;
+	text-transform:uppercase;
+}
+
+#home-subhead {
+	font-family: "Open Sans Condensed";
+	font-size: 1.5em;
+	color:white;
+	text-transform:lowercase;
+}
+
+.h1-end {
+	font-family:'Open Sans Condensed';
+	text-transform:lowercase;
+}
+
+/*--------------------------------------------------------------
+10.0 Footer
+--------------------------------------------------------------*/
+.site-footer h1 {
+	font-size: .8em;
+	float:right;
+	margin-top:60px;
+	margin-right:10px;
+	color: rgba(255,255,255,1);
+}
+
+.site-footer {
+	background: rgba(0,0,0,0.64);
+	height: 86px;
+}
+
+#text-2 > div {
+	opacity: .64;
+	margin-left: 25px;
+	margin-top:20px;
+}
+
+#text-2 > div > div > a {
+	margin-right: 25px;
+}
+
+.post-edit-link {
+	display:none;
+}
+
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/

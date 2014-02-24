@@ -75,11 +75,27 @@ function sanctuary_widgets_init() {
 }
 add_action( 'widgets_init', 'sanctuary_widgets_init' );
 
+if (function_exists('register_sidebar')) {
+    register_sidebar(array(
+        'name' => 'Footer Left',
+        'id'   => 'footer-left-widget',
+        'description'   => 'Left Footer widget position.',
+        'before_widget' => '<div id="%1$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2>',
+        'after_title'   => '</h2>'
+    ));
+}
+
 /**
  * Enqueue scripts and styles.
  */
 function sanctuary_scripts() {
 	wp_enqueue_style( 'sanctuary-style', get_stylesheet_uri() );
+	
+	wp_enqueue_style('Arvo', 'http://fonts.googleapis.com/css?family=Arvo:400,700', false, false, false );
+	wp_enqueue_style('Open Sans', 'http://fonts.googleapis.com/css?family=Open+Sans', false, false, false );
+	wp_enqueue_style('Open Sans Condensed', 'http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300', false, false, false );
 
 	//wp_enqueue_script( 'sanctuary-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -94,7 +110,7 @@ add_action( 'wp_enqueue_scripts', 'sanctuary_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-//require get_template_directory() . '/inc/custom-header.php';
+require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
