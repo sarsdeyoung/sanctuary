@@ -87,10 +87,52 @@ if (function_exists('register_sidebar')) {
     ));
 }
 
+
+/**
+ * Custom Post Types
+ */
+add_action( 'init', 'create_my_post_types' );
+
+function create_my_post_types() {
+ register_post_type( 'cabin_page', 
+ array(
+      'labels' => array(
+      	'name' => __( 'Cabin Pages' ),
+      	'singular_name' => __( 'Cabin Page' ),
+      	'add_new' => __( 'Add New' ),
+      	'add_new_item' => __( 'Add New Cabin Page' ),
+      	'edit' => __( 'Edit' ),
+      	'edit_item' => __( 'Edit Cabin Page' ),
+      	'new_item' => __( 'New Cabin Page' ),
+      	'view' => __( 'View Cabin Page' ),
+      	'view_item' => __( 'View Cabin Page' ),
+      	'search_items' => __( 'Search Cabin Pages' ),
+      	'not_found' => __( 'No Cabin Pages found' ),
+      	'not_found_in_trash' => __( 'No Cabin Pages found in Trash' ),
+      	'parent' => __( 'Parent Cabin Page' ),
+      ),
+ 'public' => true,
+      'menu_position' => 4,
+      'rewrite' => array('slug' => 'cabin_pages'),
+      'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
+      'taxonomies' => array('category', 'post_tag'),
+      'publicly_queryable' => true,
+      'show_ui' => true,
+      'query_var' => true,
+      'capability_type' => 'post',
+      'hierarchical' => false,
+     )
+  );
+}
+
+
+
 /**
  * Enqueue scripts and styles.
  */
 function sanctuary_scripts() {
+	
+	wp_enqueue_script( 'jquery', false, false, false, false );
 	wp_enqueue_style( 'sanctuary-style', get_stylesheet_uri() );
 	
 	wp_enqueue_style('Arvo', 'http://fonts.googleapis.com/css?family=Arvo:400,700', false, false, false );
@@ -99,6 +141,7 @@ function sanctuary_scripts() {
 
 	//wp_enqueue_script( 'sanctuary-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
+	
 	wp_enqueue_script( 'sanctuary-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
