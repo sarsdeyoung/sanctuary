@@ -29,21 +29,32 @@ get_header(); ?>
 					
                     <div id="cabin-gallery">
                     	<?php
-							$images = get_field('cabin_images');
+ 
+						$images = get_field('cabin_images');
 						 
-							if( $images ): ?>
-								<div id="slider" class="flexslider">
-									<ul class="slides">
-										<?php foreach( $images as $image ): ?>
-											<li>
-												<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-												<p class="flex-caption"><?php echo $image['caption']; ?></p>
-											</li>
-										<?php endforeach; ?>
-									</ul>
-								</div>
+						if( $images ): ?>
+							<div id="slider" class="flexslider">
+								<ul class="slides">
+									<?php foreach( $images as $image ): ?>
+									<li data-thumb="<?php echo $image['sizes']['thumbnail']; ?>">
+									<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+									<p><?php echo $image['caption']; ?></p>
+									</li>
+									<?php endforeach; ?>
+								</ul>
+							</div>
+							<?php
 						 
-							<?php endif; ?>
+							/*
+							*  The following code creates the thumbnail navigation
+							*/
+						 
+							?>
+							
+						<?php endif; 
+ 
+					?>
+                    
                     </div>		
                      
                     <div id="cabin-details">

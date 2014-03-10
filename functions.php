@@ -140,6 +140,11 @@ function sanctuary_scripts() {
 	wp_enqueue_style('Open Sans Condensed', 'http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300', false, false, false );
 
 	//wp_enqueue_script( 'sanctuary-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	
+	wp_enqueue_script('jquery');
+	wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/jquery.flexslider.js', array('jquery') );
+ 	wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array('jquery') );
+	
 
 	
 	wp_enqueue_script( 'sanctuary-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );

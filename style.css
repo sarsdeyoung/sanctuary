@@ -391,7 +391,6 @@ a:active {
 	font-weight:400;
 	font-size:.8em;
 	text-transform:uppercase;
-	padding-right:20px;
 }
 
 .main-navigation a {
@@ -474,11 +473,27 @@ a:active {
 	text-align: center;
 }
 
+.sub-menu:before {
+	content: ' ';
+    position: absolute;
+    bottom: 100%;
+    left: 82px;
+    border-color: transparent transparent #EBEBEB transparent;
+    border-style: solid;
+    border-width: 20px;
+}
+
+#menu-item-30 > ul {
+	top: 51px;
+	left: -51px;
+}
+
+
 .sub-menu li {	
 	border-bottom:1px solid #CCC;
 	height:35px;
 	padding-top:8px;
-	padding-right:-20px;
+	padding-right:0;
 }
 
 .sub-menu li a {
@@ -488,6 +503,30 @@ a:active {
 
 .sub-menu li a:hover {
 	background-color:#999;
+}
+
+#menu-item-30 {
+	margin-right: 20px;
+}
+
+#menu-item-29 {
+	margin-right: 20px;
+}
+
+#menu-item-28 {
+	margin-right: 20px;
+}
+
+#menu-item-27 {
+	margin-right: 20px;
+}
+
+#menu-item-26 {
+	margin-right: 20px;
+}
+
+#menu-item-25 {
+	margin-right: 20px;
 }
 
 
@@ -776,10 +815,32 @@ Cabin Post Styles
 
 #cabin-gallery {
 	float: left;
+	width: 550px;
+	margin-top: 7px;
+	margin-left: -25px;
 }
 
 #slider > ul > li {
 	list-style-type: none;
+}
+
+#slider > ul {
+	display: none;
+}
+
+#carousel > ul {
+	display: none;
+}
+
+#slider > ol > li {
+	list-style-type: none;
+	display: inline;
+	margin-left: 25px;
+	float: right;
+}
+
+#slider > ol > li > img {
+	width: 65px;
 }
 
 
